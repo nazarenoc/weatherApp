@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+      <input type="text"  class="form-control"  name="city" [(ngModel)]="city"   >
+    <button class="btn custom-button" (click)="getData()">Search</button>
+  </form>
+</nav>
+<div class="container">
+  <div class="weather-card">
+    <div>
+      <div class="location">
+        <h1>{{weather?.city.name}}, {{weather?.city.country}}</h1>
+      </div>
+      <div class="temp">
+        <p>
+          <span class="temp-value">{{weather?.list[0].main.temp | number: '1.0-0'}}&deg;C</span>
+        </p>
+      </div>      
+      <div class="heading">
+          {{weather?.list[0].weather[0].description}}
+      </div>
+    </div>
+  </div>
+</div>
